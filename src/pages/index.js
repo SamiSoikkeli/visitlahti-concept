@@ -2,13 +2,13 @@ import React from "react"
 import Layout from "../components/layout"
 
 //Components
-import HomeBanner from "../components/homePage/HomeBanner"
-import HomeContent from "../components/homePage/HomeContent"
-import HomeFeatured from "../components/homePage/HomeFeatured"
-import HomeAbout from "../components/homePage/HomeAbout"
-import HomeCards from "../components/homePage/HomeCards"
-import HomeGreen from "../components/homePage/HomeGreen"
-import HomeInspire from "../components/homePage/HomeInspire"
+import HomeBanner from "../components/homePage/homeBanner"
+import HomeContent from "../components/homePage/homeContent"
+import HomeFeatured from "../components/homePage/homeFeatured"
+import HomeAbout from "../components/homePage/homeAbout"
+import HomeCards from "../components/homePage/homeCards"
+import HomeGreen from "../components/homePage/homeGreen"
+import HomeInspire from "../components/homePage/homeInspire"
 
 //Context
 import {
