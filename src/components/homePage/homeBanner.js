@@ -21,7 +21,6 @@ const HomeBanner = ({ onCursor }) => {
   let canvas = useRef(null)
   useEffect(() => {
     let renderingElement = canvas.current
-    // create an offscreen canvas only for the drawings
     let drawingElement = renderingElement.cloneNode()
     let drawingCtx = drawingElement.getContext("2d")
     let renderingCtx = renderingElement.getContext("2d")
@@ -30,7 +29,6 @@ const HomeBanner = ({ onCursor }) => {
     let moving = false
 
     renderingCtx.globalCompositeOperation = "source-over"
-    //renderingCtx.fillStyle = currentTheme === "light" ? "#F0F0F0" : "#000000"
     renderingCtx.fillStyle = currentTheme === "light" ? "#F0F0F0" : "#000000"
     renderingCtx.fillRect(0, 0, size.width, size.height)
 
@@ -69,7 +67,7 @@ const HomeBanner = ({ onCursor }) => {
         renderingCtx.drawImage(drawingElement, 0, 0)
       }
     })
-  }, [currentTheme])
+  }, [currentTheme, size.height, size.width])
 
   const container = {
     initial: { y: 800 },
