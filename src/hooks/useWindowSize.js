@@ -1,26 +1,28 @@
 import { useState, useEffect } from "react"
 
-export default function useWindowSize() {
-  function getSize() {
-    const isBrowser = typeof window !== "undefined"
-    if (isBrowser) {
-      return {
-        width: window.innerWidth,
-        height: window.innerHeight,
-      }
-    }
-  }
+let defaultHeight
+let defaultWidth
 
-  const [windowSize, setWindowSize] = useState(getSize)
+if (typeof window !== `undefined`) {
+  defaultHeight = window.innerHeight
+  defaultWidth = window.innerWidth
+}
+
+export default function useWindowSize() {
+  const [dimensions, setDimensions] = useState({
+    windowHeight: defaultHeight,
+    windowWidth: defaultWidth,
+  })
 
   useEffect(() => {
-    function handleResize() {
-      setWindowSize(getSize())
-    }
+    const handler = () => setDimensions({
+      windowHeight: window.innerHeight,
+      windowWidth: window.innerWidth,
+    })
 
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
+    window.addEventListener(`resize`, handler)
+    return () => window.removeEventListener(`resize`, handler)
   }, [])
 
-  return windowSize
+  return dimensions
 }
