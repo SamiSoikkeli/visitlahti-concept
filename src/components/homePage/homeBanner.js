@@ -9,7 +9,7 @@ import { useGlobalStateContext } from "../../context/globalContext"
 //Styled Components
 import {
   Banner,
-  BackgroundImage,
+  Video,
   BannerTitle,
   Canvas,
   Headline,
@@ -19,6 +19,7 @@ const HomeBanner = ({ onCursor }) => {
   const size = useWindowSize()
   const { currentTheme } = useGlobalStateContext()
   let canvas = useRef(null)
+
   useEffect(() => {
     let renderingElement = canvas.current
     let drawingElement = renderingElement.cloneNode()
@@ -30,7 +31,7 @@ const HomeBanner = ({ onCursor }) => {
 
     renderingCtx.globalCompositeOperation = "source-over"
     renderingCtx.fillStyle = currentTheme === "light" ? "#F0F0F0" : "#000000"
-    renderingCtx.fillRect(0, 0, size.width, size.height)
+    renderingCtx.fillRect(0, 0, size.windowWidth, size.windowHeight)
 
     renderingElement.addEventListener("mouseover", ev => {
       moving = true
@@ -60,14 +61,14 @@ const HomeBanner = ({ onCursor }) => {
         drawingCtx.moveTo(lastX, lastY)
         drawingCtx.lineTo(currentX, currentY)
         drawingCtx.closePath()
-        drawingCtx.lineWidth = 250
+        drawingCtx.lineWidth = 120
         drawingCtx.stroke()
         lastX = currentX
         lastY = currentY
         renderingCtx.drawImage(drawingElement, 0, 0)
       }
     })
-  }, [currentTheme, size.height, size.width])
+  }, [currentTheme])
 
   const container = {
     initial: { y: 800 },
@@ -91,17 +92,19 @@ const HomeBanner = ({ onCursor }) => {
 
   return (
     <Banner>
-      <BackgroundImage>
-        <img
+      <Video>
+        <video
           height="100%"
           width="100%"
-          alt="Lahti Skijump Scenery"
-          src={require("../../assets/img/home-banner2.jpg")}
+          loop
+          autoPlay
+          muted
+          src={require("../../assets/video/BG-video.mp4")}
         />
-      </BackgroundImage>
+      </Video>
       <Canvas
-        height={size.height}
-        width={size.width}
+        height={size.windowHeight}
+        width={size.windowWidth}
         ref={canvas}
         onMouseEnter={() => onCursor("hovered")}
         onMouseLeave={onCursor}
