@@ -4,6 +4,10 @@ import { motion } from "framer-motion"
 export const FooterNav = styled(motion.div)`
   height: 300px;
   margin-top: 296px;
+  @media only screen and (max-width: 768px) {
+    opacity: 1 !important;
+    transform: translateY(0px) translateZ(0px);
+  }
 `
 
 export const FooterContent = styled.div`

@@ -46,6 +46,9 @@ export const NavIcons = styled.div`
     svg {
       /* fill: ${props => props.theme.text};
       stroke: ${props => props.theme.text}; */
+      &:hover {
+
+      }
     }
     .shopSvg {
       fill: ${props => props.theme.text};

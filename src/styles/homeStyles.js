@@ -13,18 +13,20 @@ export const Banner = styled.div`
   margin-bottom: 296px;
 `
 
-export const BackgroundImage = styled.div`
+export const Video = styled.div`
   height: 100%;
   width: 100%;
-  img {
+  video {
     object-fit: cover;
   }
 `
+
 export const Canvas = styled.canvas`
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
+  width: 100%;
   display: block;
 `
 
@@ -34,6 +36,9 @@ export const BannerTitle = styled(motion.h1)`
   left: -18px;
   color: ${props => props.theme.text};
   pointer-events: none;
+  @media only screen and (max-width: 768px) {
+    left: 0;
+  }
 `
 
 export const Headline = styled(motion.span)`
@@ -57,6 +62,10 @@ export const Headline = styled(motion.span)`
 
 export const HomeContentSection = styled(motion.div)`
   margin-bottom: 200px;
+  @media only screen and (max-width: 768px) {
+    opacity: 1 !important;
+    transform: translateY(0px) translateZ(0px);
+  }
 `
 export const Content = styled(motion.h2)`
   width: 70%;
@@ -85,6 +94,8 @@ export const HomeFeaturedSection = styled(motion.div)`
   }
   @media only screen and (max-width: 768px) {
     margin-bottom: 250px;
+    opacity: 1 !important;
+    transform: translateY(0px) translateZ(0px);
   }
 `
 
@@ -134,12 +145,16 @@ export const FeaturedContent = styled(motion.div)`
         }
       }
     }
+    @media only screen and (max-width: 1555px) {
+      left: 0;
+    }
     @media only screen and (max-width: 768px) {
       bottom: -160px;
-      left: 0;
       font-size: 2rem;
       line-height: 30px;
       letter-spacing: -0.12rem;
+      opacity: 1 !important;
+      transform: translateY(0px) translateZ(0px);
       .arrow{
         svg{
           //width: 58px;
@@ -167,6 +182,8 @@ export const FeaturedImage = styled.div`
   @media only screen and (max-width: 768px) {
     left: 0;
     height: 100%;
+    opacity: 1 !important;
+    transform: translateY(0px) translateZ(0px);
   }
 `
 
@@ -176,6 +193,10 @@ export const FeaturedImage = styled.div`
 
 export const HomeAboutSection = styled(motion.div)`
   /* margin-bottom: 200px; */
+  @media only screen and (max-width: 768px) {
+    opacity: 1 !important;
+    transform: translateY(0px) translateZ(0px);
+  }
 `
 
 export const About = styled.div`
@@ -308,12 +329,9 @@ export const CardContent = styled(motion.div)`
   }
 
   .react-multi-carousel-item {
-    //margin-right: 7rem;
-    //width: auto;
     margin-right: -30rem;
     transition: all .4s ease-in-out;
     &:hover {
-      //transform: rotate(0.5deg);
       transform: scale(1.01);
     }
   }
@@ -415,6 +433,10 @@ export const Card = styled(motion.div)`
 export const HomeGreenSection = styled(motion.div)`
   margin-top: 8rem;
   color: ${props => props.theme.text};
+  @media only screen and (max-width: 768px) {
+    opacity: 1 !important;
+    transform: translateY(0px) translateZ(0px);
+  }
 `
 
 export const GreenSectionContainer = styled(motion.div)`
@@ -426,11 +448,13 @@ export const GreenSectionContainer = styled(motion.div)`
 
 export const GreenImageContent = styled(motion.div)`
   width: 50%;
+  @media only screen and (max-width: 1769px) {
+    .green-capital-img {
+        width: 120%;
+    }
+  }
   @media only screen and (max-width: 768px) {
     width: 100%;
-    /* .green-capital-img {
-        width: 20rem;
-    } */
   }
 `
 
@@ -479,8 +503,9 @@ export const GreenTextContent = styled(motion.div)`
   @media only screen and (max-width: 768px) {
     width: 100%;
     margin-left: 2rem;
+    text-align: center;
     button {
-      margin-left: 5%;
+      margin-left: -5%;
     }
   }
 `
@@ -492,6 +517,10 @@ export const GreenTextContent = styled(motion.div)`
 export const HomeInspireSection = styled(motion.div)`
   margin-top: 200px;
   color: ${props => props.theme.text};
+  @media only screen and (max-width: 768px) {
+    opacity: 1 !important;
+    transform: translateY(0px) translateZ(0px);
+  }
 `
 
 export const InspireSectionContainer = styled(motion.div)`
@@ -537,24 +566,27 @@ export const InspireCardContent = styled(motion.div)`
       transform: scale(1.01);
     }
   }
-
   h2, p {
     font-size: 2.25rem;
     margin: 0;
     letter-spacing: -0.1rem;
   }
-
-  h2 {
-
-  }
-
   p {
     font-weight: 100;
   }
+  @media only screen and (max-width: 1040px) {
+    img {
+      width: 80%;
+    }
+  }
   @media only screen and (max-width: 768px) {
+    img {
+      width: 100%;
+    }
     h2, p {
       font-size: 1.25rem;
       padding-left: 1.5rem;
+      text-align: center;
     }
   }
 `
@@ -586,11 +618,13 @@ export const InspireCardFooter = styled(motion.div)`
     }
   }
   @media only screen and (max-width: 768px) {
+    padding-bottom: 3rem;
+    text-align: center;
     .lineSvg {
       display: none;
     }
     a {
-      padding: 0 0.5rem 0 5rem;
+      padding: 0;
     }
   }
 `
