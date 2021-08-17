@@ -51,17 +51,6 @@ const HomeFeatured = ({ onCursor }) => {
             onMouseEnter={() => onCursor("hovered")}
             onMouseLeave={onCursor}
           >
-            {/* <Flex spaceBetween>
-              <h3>Featured Image</h3>
-              <motion.div
-                animate={{ opacity: hovered ? 1 : 0 }}
-                transition={{ duration: 0.6, ease: [0.6, 0.05, -0.01, 0.9] }}
-                className="meta"
-              >
-                <h4>Niemen Satama, LAHTI</h4>
-                <h4>2019</h4>
-              </motion.div>
-            </Flex> */}
             <h2 className="featured-title">
               Lakeland Finland <br /> starts from Lahti
               <span className="arrow">
