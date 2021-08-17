@@ -88,17 +88,15 @@ const Header = ({
               </svg>
             </Link>
             {/* Toggle between light and dark theme */}
-            {/* <span
+            <span
               onClick={toggleTheme}
               onMouseEnter={() => onCursor("pointer")}
               onMouseLeave={onCursor}
-            ></span> */}
+            ></span>
           </Logo>
           <NavIcons>
             <Flex>
               <a
-                onHoverStart={() => setHovered(!hovered)}
-                onHoverEnd={() => setHovered(!hovered)}
                 onMouseEnter={() => onCursor("hovered")}
                 onMouseLeave={onCursor}
                 ref={shopRef}
@@ -108,8 +106,6 @@ const Header = ({
                 <Shop />
               </a>
               <a
-                onHoverStart={() => setHovered(!hovered)}
-                onHoverEnd={() => setHovered(!hovered)}
                 onMouseEnter={() => onCursor("hovered")}
                 onMouseLeave={onCursor}
                 ref={mapRef}
@@ -119,8 +115,6 @@ const Header = ({
                 <Map />
               </a>
               <a
-                onHoverStart={() => setHovered(!hovered)}
-                onHoverEnd={() => setHovered(!hovered)}
                 onMouseEnter={() => onCursor("hovered")}
                 onMouseLeave={onCursor}
                 ref={searchRef}
@@ -130,8 +124,6 @@ const Header = ({
                 <Search />
               </a>
               <a
-                onHoverStart={() => setHovered(!hovered)}
-                onHoverEnd={() => setHovered(!hovered)}
                 onMouseEnter={() => onCursor("hovered")}
                 onMouseLeave={onCursor}
                 ref={langRef}
